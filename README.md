@@ -14,8 +14,7 @@ additive notation and subtractive notation. In the latter notation Roman
 numbers like XIV (= 10 + (5 - 1)) are allowed, whereas in the former you would
 have to represent that number as XIIII (= 10 + 1 + 1 + 1 + 1). In this
 assignment we focus on Roman numbers using the additive notation only. In
-other words, for this assignment, the Roman number XIV represents 16 (= 10 + 1
-+ 5).
+other words, for this assignment, the Roman number XIV represents 16 (= 10 + 1 + 5).
 
 ## Assignment
 
