@@ -11,9 +11,11 @@ function *ρ* ∈ ℛ → ℕ  maps a Roman numeral to its associated natural va
 
 There are two main variations of constructing and interpreting Roman numbers:
 additive notation and subtractive notation. In the latter notation Roman
-numbers like XIV (= 10 + (5 - 1)) are allowed, whereas in the former you
-would have to represent that number as XIIII (= 10 + 1 + 1 + 1 + 1). In
-this assignment we focus on Roman numbers using the additive notation only.
+numbers like XIV (= 10 + (5 - 1)) are allowed, whereas in the former you would
+have to represent that number as XIIII (= 10 + 1 + 1 + 1 + 1). In this
+assignment we focus on Roman numbers using the additive notation only. In
+other words, for this assignment, the Roman number XIV represents 16 (= 10 + 1
++ 5).
 
 ## Assignment
 
@@ -75,12 +77,13 @@ file [`src/RomanNumbers.hs`](src/RomanNumbers.hs).
 What is the output of `r2i` for inputs `"XIV"`, `"MIMXLD"`, `"VVVVVIIIIIIII"`,
 `"IIXLCCM"`, and `"IXFGHIMMIVX"`?
 
-Your function should give an error when trying to convert a character that is
-not a Roman numeral. For example, `r2i "H"` should show the error `Unexpected
-character; 'H' is not a Roman numeral.`
+Your function should give an
+[error](https://hackage.haskell.org/package/base-4.17.0.0/docs/Prelude.html#v:error)
+when trying to convert a character that is not a Roman numeral. For example,
+`r2i "H"` should show the error `Unexpected character; 'H' is not a Roman
+numeral.`
 
-You can run your function from the REPL with `cabal repl` or from the
-commandline with `cabal exec RomanNumerals -- --r2i XIV`.
+You can run your function from the REPL with `cabal repl`.
 
 ### Exercise 2
 
@@ -102,6 +105,9 @@ Convince yourself and us that your implementation works by adding more tests.
 expectations](https://hspec.github.io/expectations.html). However, in this
 assignment, it is okay to only use the ``shouldBe`` combinator.
 
+**Note** Only testing the examples from this README isn't enough to convince
+us that your code is working!
+
 ## From integers to Roman number: the function `i2r`
 
 Now for the other way around: converting integers to a Roman number with the
@@ -120,8 +126,7 @@ Your function should return the empty string (`""`) when converting zero
 (`0`). It should show an error when trying to convert a negative number. The
 error message should read `"There are no negative Roman numbers"`.
 
-You can run your function from the REPL with `cabal repl` or from the
-commandline with `cabal exec RomanNumerals -- --i2r 3456`.
+You can run your function from the REPL with `cabal repl`.
 
 ### Exercise 4: Write tests for `i2r`
 
