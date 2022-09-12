@@ -18,6 +18,14 @@ module RomanNumbers
 
 -- Implement and document r2i
 r2i rs = 1
+texttoinput :: Char -> Int
+texttoinput 'M' = 1000
+texttoinput 'D' = 500
+texttoinput 'C' = 100
+texttoinput 'L' = 50
+texttoinput 'X' = 10
+texttoinput 'V' = 5
+texttoinput 'I' = 1
 
 -- Implement and document i2r
 i2r n  = "I"
