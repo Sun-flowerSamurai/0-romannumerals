@@ -20,7 +20,7 @@ other words, for this assignment, the Roman number XIV represents 16 (= 10 + 1 +
 
 ### Getting started
 
-1.  Fork this assignment repository. This
+1.  Clone this assignment repository. This
     repository contains a Cabal project. Do not *manually* add
     files to or remove files from this project, nor change file names. All you
     have to do is to change the contents of
