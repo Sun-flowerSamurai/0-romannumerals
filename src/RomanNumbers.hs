@@ -17,6 +17,9 @@ module RomanNumbers
 
 
 -- Implement and document r2i
+-- | r2i converts a Roman numeral to the respective (arabic) numeral.
+-- | returns an error if it is not a valid Roman numeral.
+
 r2i :: String -> Int
 r2i rs = sum  (map texttoinput rs)
 
@@ -28,6 +31,7 @@ texttoinput 'L' = 50
 texttoinput 'X' = 10
 texttoinput 'V' = 5
 texttoinput 'I' = 1
+texttoinput x = error ("Unexpected character; " ++ [x] ++" is not a Roman numeral.")
 
 -- Implement and document i2r
 i2r n  = "I"
