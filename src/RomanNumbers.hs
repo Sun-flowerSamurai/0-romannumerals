@@ -1,8 +1,8 @@
 {-|
 Module      : RomanNumbers
 Description : Convert Roman numbers to integers and the other way around.
-Copyright   : STUDENT NAME 1 (ID)
-              STUDENT NAME 2 (ID)
+Copyright   : Matt Verhoeven (1728342)
+              David Chen (1742477)
 
 RomanNumbers is a module to convert Roman numbers to integers and vice versa. Roman numbers are represented by the characters 'M', 'D', 'C', 'L', 'X', 'V', and 'I'
 
@@ -17,7 +17,9 @@ module RomanNumbers
 
 
 -- Implement and document r2i
-r2i rs = 1
+r2i :: String -> Int
+r2i rs = sum  (map texttoinput rs)
+
 texttoinput :: Char -> Int
 texttoinput 'M' = 1000
 texttoinput 'D' = 500
