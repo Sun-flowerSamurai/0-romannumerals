@@ -18,7 +18,7 @@ module RomanNumbers
 
 -- Implement and document r2i
 -- | r2i converts a Roman numeral to the respective (arabic) numeral.
--- | returns an error if it is not a valid Roman numeral.
+-- Returns an error if it is not a valid Roman numeral.
 
 r2i :: String -> Int
 r2i rs = sum  (map texttoinput rs)
@@ -34,4 +34,15 @@ texttoinput 'I' = 1
 texttoinput x = error ("Unexpected character; " ++ [x] ++" is not a Roman numeral.")
 
 -- Implement and document i2r
-i2r n  = "I"
+i2r :: Int -> String
+-- i2r n = 1
+i2r n = strmult (n `div` 1000) "M" ++ strmult ((n `mod` 1000) `div` 500) "D" ++ strmult ((n `mod` 500) `div` 100) "C" ++ strmult ((n `mod` 100) `div` 50) "L" ++ strmult ((n `mod` 50) `div` 10) "X" ++ strmult((n `mod` 10) `div` 5) "V" ++ strmult(n `mod` 5) "I"
+
+
+
+
+-- | Implements repeating a string (or any list) as would be expected from e.g. python. 
+-- example: strmult 3 "abc" = "abcabcabc"
+strmult :: Int -> [a] -> [a]
+strmult 0 zs = []
+strmult n xs = xs ++ (strmult (n-1) xs)
