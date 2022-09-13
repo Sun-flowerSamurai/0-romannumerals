@@ -53,5 +53,8 @@ main = hspec $ do
 
       it "(forall n : n in N : (r2i . i2r) n >= 1)" $ property $
         forAll naturals (\n -> (r2i . i2r) n >= (1::Int))
+      it "(forall n : n in N : (r2i . i2r) n == n)" $ property $
+        forAll naturals (\n -> (r2i . i2r) n == n)
+        
 
       -- Here go your own tests for r2i . i2r.
