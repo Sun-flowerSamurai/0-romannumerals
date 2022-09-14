@@ -1,3 +1,9 @@
+{-|
+Copyright   : Matt Verhoeven (1728342)
+              David Chen (1742477)
+
+-}
+
 import Test.Hspec
 import Control.Exception (evaluate)
 import Test.QuickCheck
