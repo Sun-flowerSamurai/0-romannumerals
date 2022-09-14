@@ -18,6 +18,8 @@ main = hspec $ do
   describe "RomanNumbers" $ do
     describe "r2i" $ do
 
+    -- Here go your own tests for r2i.
+
       it "should convert \"I\" to 1" $ do
         r2i "I" `shouldBe` (1::Int)
       it "should convert \"V\" to 5" $ do
@@ -31,12 +33,15 @@ main = hspec $ do
       it "should return an error when not a valid Roman number" $ do
         evaluate (r2i "Javascript") `shouldThrow` anyErrorCall
 
-      -- Here go your own tests for r2i.
   
     describe "i2r" $ do
-
+      
+      -- Here go your own tests for i2r.
+      
       it "should convert 1 to \"I\"" $ do
         i2r (1::Int) `shouldBe` "I"
+      it "should convert 16 to \"XVI\"" $ do
+        i2r (16::Int) `shouldBe` "XVI"
       it "should convert 5 to \"V\"" $ do
         i2r (5::Int) `shouldBe` "V"
       it "should convert 70 to \"LXX\"" $ do
@@ -49,18 +54,19 @@ main = hspec $ do
         i2r (0::Int) `shouldBe` ""
       it "should return an error if given a negative number" $ do
         evaluate (i2r (-1 ::Int)) `shouldThrow` anyErrorCall 
-      
-      -- Here go your own tests for i2r.
-
+            
 
 -- Do not change anything below this line
 --
     describe "r2i . i2r" $ do
 
+      -- Here go your own tests for r2i . i2r.
+
       it "(forall n : n in N : (r2i . i2r) n >= 1)" $ property $
         forAll naturals (\n -> (r2i . i2r) n >= (1::Int))
       it "(forall n : n in N : (r2i . i2r) n == n)" $ property $
         forAll naturals (\n -> (r2i . i2r) n == n)
-        
-
-      -- Here go your own tests for r2i . i2r.
+      it "should convert 0 to 0" $ do
+        (r2i . i2r) (0::Int) `shouldBe` (0::Int) 
+      it "should convert 123 to 123" $ do
+        (r2i . i2r) (123::Int) `shouldBe` (123::Int) 
