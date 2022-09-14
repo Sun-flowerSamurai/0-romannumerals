@@ -31,7 +31,7 @@ texttoinput 'L' = 50
 texttoinput 'X' = 10
 texttoinput 'V' = 5
 texttoinput 'I' = 1
-texttoinput x = error ("Unexpected character; " ++ [x] ++" is not a Roman numeral.")
+texttoinput x = error ("Unexpected character; '" ++ [x] ++ "' is not a Roman numeral.")
 
 -- Implement and document i2r
 -- | i2r converts a number to an (additive) roman numeral.
@@ -42,7 +42,10 @@ i2r n = if (n < 0) then error "There are no negative Roman numbers" else strmult
 -- i2r n = strmult (n `div` 1000) "M" ++ strmult ((n `mod` 1000) `div` 500) "D" ++ strmult ((n `mod` 500) `div` 100) "C" ++ strmult ((n `mod` 100) `div` 50) "L" ++ strmult ((n `mod` 50) `div` 10) "X" ++ strmult((n `mod` 10) `div` 5) "V" ++ strmult(n `mod` 5) "I"
 
 i2r' :: Int -> String
-i2r' = gi2r 1
+i2r' i 
+  | i >= 0  = gi2r 1 i
+  | i < 0  = error "There are no negative Roman numbers."
+
 
 gi2r :: (Eq a, Num a) => a -> Int -> [Char]
 gi2r z 0 = ""
