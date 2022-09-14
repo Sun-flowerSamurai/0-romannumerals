@@ -21,17 +21,17 @@ module RomanNumbers
 -- Returns an error if it is not a valid Roman numeral.
 
 r2i :: String -> Int
-r2i rs = sum  (map texttoinput rs)
+r2i rs = sum (map rho rs)
 
-texttoinput :: Char -> Int
-texttoinput 'M' = 1000
-texttoinput 'D' = 500
-texttoinput 'C' = 100
-texttoinput 'L' = 50
-texttoinput 'X' = 10
-texttoinput 'V' = 5
-texttoinput 'I' = 1
-texttoinput x = error ("Unexpected character; '" ++ [x] ++ "' is not a Roman numeral.")
+rho :: Char -> Int
+rho 'M' = 1000
+rho 'D' = 500
+rho 'C' = 100
+rho 'L' = 50
+rho 'X' = 10
+rho 'V' = 5
+rho 'I' = 1
+rho x = error ("Unexpected character; '" ++ [x] ++ "' is not a Roman numeral.")
 
 -- Implement and document i2r
 -- | i2r converts a number to an (additive) roman numeral.
